@@ -20,4 +20,18 @@ class Game
     puts "Good bye!"
   end
 
+  ## method to handle each player turn
+  def turn(player)
+    rand1 = rand(1..20)
+    rand2 = rand(1..20)
+    result = rand1 + rand2
+
+    puts "--- NEW TURN ---" unless @turn == 0
+    puts "#{player.name}: What does #{rand1} plus #{rand2} equal?"
+    answer = gets.chomp.to_i
+
+    @turn += 1
+    self.score(player, result == answer)
+  end
+
 end
