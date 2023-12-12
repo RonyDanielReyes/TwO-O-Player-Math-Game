@@ -34,4 +34,21 @@ class Game
     self.score(player, result == answer)
   end
 
+## adding method to update player score  
+  def score(player, bool)
+    if bool
+      puts "YES! You are correct."
+    else
+      puts "Seriously? No!"
+      player.lives -= 1
+    end
+
+    @over = (@player1.lives == 0 or @player2.lives == 0)
+    if !@over
+      puts "P1: #{@player1.lives}/3 vs P2: #{@player2.lives}/3"
+    else 
+      @player1.lives == 0 ? winner = @player2 : winner = @player1
+      puts "#{winner.name} wins with a score of #{winner.lives}/3"
+    end
+  end
 end
