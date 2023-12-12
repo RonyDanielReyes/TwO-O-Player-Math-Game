@@ -4,10 +4,16 @@ class Game
 
   ## constructor to start the game
   def initialize
+
+    # we started with turn 0
     @turn = 0
+
+    # creating new players 
     @player1 = Player.new("Player 1")
     @player2 = Player.new("Player 2")
+    # over will help us to track when the game is over
     @over = false
+    
     self.start
   end
 
