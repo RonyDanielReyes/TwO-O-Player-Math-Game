@@ -10,5 +10,14 @@ class Game
     @over = false
     self.start
   end
-  
+
+  # method to start the game
+  def start
+    while !@over do
+      @turn % 2 == 0 ? self.turn(@player1) : self.turn(@player2)
+    end
+    puts "--- GAME OVER ---"
+    puts "Good bye!"
+  end
+
 end
